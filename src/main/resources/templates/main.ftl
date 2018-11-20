@@ -23,33 +23,36 @@
                 <input type="text" class="form-control" name="tag" placeholder="Въведете тагове"/>
             </div>
             <div class="form-group">
-            <div class="custom-file">
-                <input type="file" class="form-control" name="file" id="customFile"/>
-                <label class="custom-file-label" for="customFile">Choose file</label>
-            </div>
+                <div class="custom-file">
+                    <input type="file" class="form-control" name="file" id="customFile"/>
+                    <label class="custom-file-label" for="customFile">Choose file</label>
+                </div>
             </div>
             <input type="hidden" name="_csrf" value="${_csrf.token}"/>
             <div class="form-group">
                 <button type="submit" class="btn btn-primary" >Добави</button>
-            <div class="form-group">
+            </div>
         </form>
     </div>
 </div>
 
+<div class="card-columns">
 <#list messages as message>
-<div class="card" style="width: 18rem;">
+<div class="card my-3" style="width: 18rem;">
    <#if message.filename??>
         <img class="card-img-top" src="/img/${message.filename}"/>
     </#if>
-    <div class="card-body">
+    <div class="m-2">
         <span>${message.text}</span>
         <i>${message.tag}</i>
-        <div class="card-footer text-muted">
-            ${message.authorName}
-        </div>
+    </div>
+    <div class="card-footer text-muted">
+        ${message.authorName}
     </div>
 </div>
 <#else>
 No messages
 </#list>
+</div>
+
 </@c.page>
