@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer Id;
+    private Long Id;
 
     private String text;
     private String tag;
@@ -31,11 +31,11 @@ public class Message {
     public String getAuthorName() {
         return author != null ? author.getUsername() : "<none>";
     }
-    public Integer getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         Id = id;
     }
 
