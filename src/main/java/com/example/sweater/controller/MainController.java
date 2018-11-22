@@ -64,7 +64,8 @@ public class MainController {
 
         if(bindingResult.hasErrors()){
             Map<String, String> errorMap = ControllerUtils.getErrors(bindingResult);
-            model.addAllAttributes(errorMap);
+            model.mergeAttributes(errorMap);
+            model.addAttribute("message", message);
         } else {
             if (file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadPath);
@@ -79,6 +80,8 @@ public class MainController {
 
                 message.setFilename(resultFilename);
             }
+
+            model.addAttribute("message", null);
 
             messageRepo.save(message);
         }
