@@ -22,3 +22,6 @@ spring.jpa.hibernate.ddl-auto=create
 spring.jpa.hibernate.ddl-auto=validate
 
 recaptcha.secret=...
+
+spring.session.jdbc.initialize-schema=always # Database schema initialization mode.
+spring.session.jdbc.table-name=SPRING_SESSION
