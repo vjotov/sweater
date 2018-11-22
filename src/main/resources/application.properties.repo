@@ -20,3 +20,5 @@ mail.debug=true
 spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=create
 spring.jpa.hibernate.ddl-auto=validate
+
+recaptcha.secret=...
