@@ -9,7 +9,7 @@ create table message (
     primary key (id)
 );
 
-create table user_roles (
+create table user_role (
     user_id int8 not null,
     roles varchar(255)
 );
@@ -28,6 +28,6 @@ alter table if exists message
     add constraint message_user_fk
     foreign key (user_id) references usr;
 
-alter table if exists user_roles
+alter table if exists user_role
     add constraint ruser_role_fk
     foreign key (user_id) references usr;
