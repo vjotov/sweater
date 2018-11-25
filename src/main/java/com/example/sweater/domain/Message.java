@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    private Long id;
 
     @NotBlank(message = "Please fill the message")
     @Length(max = 2048, message = "Message is too long (more than 2kB).")
@@ -38,11 +38,11 @@ public class Message {
         return author != null ? author.getUsername() : "<none>";
     }
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getText() {
