@@ -6,7 +6,7 @@
 <div class="card-columns" id="message-list">
 
     <#list page.content as message>
-    <div class="card my-3" style="width: 18rem;">
+    <div class="card my-3" style="width: 18rem;" data-id="${message.id}">
         <#if message.filename??>
         <img class="card-img-top" src="/img/${message.filename}"/>
     </#if>
