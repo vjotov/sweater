@@ -47,7 +47,7 @@ public class MainController {
     public String main(
             @RequestParam(required = false, defaultValue = "") String filter,
             Model model,
-            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC, size = 3) Pageable pageable
+            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC, size = 10) Pageable pageable
     ) {
         Page<Message> page;
         if(filter != null && !filter.isEmpty())
@@ -70,7 +70,7 @@ public class MainController {
 //            @RequestParam String text,
 //            @RequestParam String tag,
             Model model,
-            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC, size = 3) Pageable pageable,
+            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC, size = 10) Pageable pageable,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
 //        Message message = new Message(text, tag, user);

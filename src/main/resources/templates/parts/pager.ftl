@@ -24,20 +24,20 @@
                 <#elseif p == - 1>
                     <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
                 <#else>
-                    <li class="page-item"><a class="page-link" href="${url}?page=${p - 1}&size=${page.getSize()}">${p}</a></li>
+                    <li class="page-item"><a class="page-link" href="${url}?page=${p - 1}&size=${page.getSize()};">${p}</a></li>
                 </#if>
             </#list>
         </ul>
 
-        <ul class="pagination">
-            <li class="page-item disabled"><a class="page-link" href="#">Messages per page</a></li>
-            <#list [3,5,7,10] as c>
-            <#if c == page.getSize()>
-            <li class="page-item active"><a class="page-link" href="#">${c}</a></li>
-            <#else>
-            <li class="page-item"><a class="page-link" href="${url}?page=${page.getNumber()}&size=${c}">${c}</a></li>
-        </#if>
-        </#list>
-        </ul>
+        <!--<ul class="pagination">-->
+            <!--<li class="page-item disabled"><a class="page-link" href="#">Messages per page</a></li>-->
+            <!--<#list [3,5,7,10] as c>-->
+                <!--<#if c == page.getSize()>-->
+                    <!--<li class="page-item active"><a class="page-link" href="#">${c}</a></li>-->
+                <!--<#else>-->
+                    <!--<li class="page-item"><a class="page-link" href="${url}?page=${page.getNumber()}&size=${c}">${c}</a></li>-->
+                <!--</#if>-->
+            <!--</#list>-->
+        <!--</ul>-->
     </div>
 </#macro>

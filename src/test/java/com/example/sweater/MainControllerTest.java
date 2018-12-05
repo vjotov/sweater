@@ -46,16 +46,16 @@ public class MainControllerTest {
         this.mockMvc.perform(get("/main"))
                 .andDo(print())
                 .andExpect(authenticated())
-                .andExpect(xpath("//*div[@id='message-list']/div").nodeCount(4));
+                .andExpect(xpath("//div[@id='message-list']/div").nodeCount(4));
     }
 
     @Test
     public void filterMessageTest() throws Exception {
-        this.mockMvc.perform(get("/main").param("filter","my-tag"))
+        this.mockMvc.perform(get("/main").param("filter","my-tag").param("page","0").param("size","10"))
                 .andDo(print())
                 .andExpect(authenticated())
-                .andExpect(xpath("//*div[@id='message-list']/div").nodeCount(4))
-                .andExpect(xpath("//*div[@id='message-list']/div[@data-id=1]").exists())
-                .andExpect(xpath("//*div[@id='message-list']/div[@data-id=3]").exists());
+                .andExpect(xpath("//div[@id='message-list']/div").nodeCount(2))
+                .andExpect(xpath("//div[@id='message-list']/div[@data-id=1]").exists())
+                .andExpect(xpath("//div[@id='message-list']/div[@data-id=3]").exists());
     }
 }
