@@ -70,6 +70,7 @@ public class MainController {
 //            @RequestParam String text,
 //            @RequestParam String tag,
             Model model,
+            @PageableDefault(sort = { "id" }, direction = Sort.Direction.DESC, size = 3) Pageable pageable,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
 //        Message message = new Message(text, tag, user);
@@ -86,9 +87,10 @@ public class MainController {
 
             messageRepo.save(message);
         }
-        Iterable<Message> messages = messageRepo.findAll();
-        model.addAttribute("messages", messages);
+        Page<Message> page = messageRepo.findAll(pageable);
 
+        model.addAttribute("page", page);
+        model.addAttribute("url","/main");
         return "main";
 
     }

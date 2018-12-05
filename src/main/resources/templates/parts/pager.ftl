@@ -12,12 +12,6 @@
 
             body = head + bodyBefore + (pageNumber gt 3 && pageNumber lt totalPages -2)?then([pageNumber],[]) + bodyAfter + tail
         >
-<!--
-
-            bodyAfter = [] //(pageNumber gt 3 && pageNumber gt totalPages -2)?then([pageNumber+1], [])
-                        body = head + bodyBefore + (pageNumber gt 1 && pageNumber gt totalPages -1)?then([pageNumber],[]) + bodyAfter + tail
-
- -->
     <#else>
         <#assign body = 1..page.getTotalPages() >
     </#if>
