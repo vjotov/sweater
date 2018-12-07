@@ -1,5 +1,6 @@
 package com.example.sweater.domain;
 
+import com.example.sweater.domain.util.MessageHelper;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -43,7 +44,7 @@ public class Message {
     }
 
     public String getAuthorName() {
-        return author != null ? author.getUsername() : "<none>";
+        return MessageHelper.getAuthorName(author);
     }
     public Long getId() {
         return id;
